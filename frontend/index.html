@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Panel Municipal – Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="bg-gradient" data-page="login">
+
+  <div class="bg-overlay"></div>
+
+  <main class="center-wrapper">
+    <section class="card card-3d card-login">
+      <h1 class="app-title">Panel Municipal</h1>
+      <p class="app-subtitle">Inicia sesión como administrador</p>
+
+      <form id="loginForm" class="form">
+        <div class="form-group">
+          <label for="email">Correo</label>
+          <input
+            id="email"
+            type="email"
+            class="input"
+            placeholder="admin@sc.gob.mx"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Contraseña</label>
+          <input
+            id="password"
+            type="password"
+            class="input"
+            placeholder="••••••••"
+            required
+          />
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-full">
+          Entrar
+        </button>
+
+        <div id="loginError" class="alert alert-error" style="display:none;">
+          Credenciales incorrectas.
+        </div>
+
+        <p class="hint">
+          <strong>Demo:</strong> usa <code>admin@sc.gob.mx</code> / <code>123456</code>
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

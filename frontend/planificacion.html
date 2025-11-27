@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Nueva Planificación de Ruta</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="bg-gradient" data-page="planificacion">
+
+  <div class="bg-overlay"></div>
+
+  <header class="topbar">
+    <div class="topbar-left">
+      <span class="logo-badge">RB</span>
+      <span class="topbar-title">Planificación diaria</span>
+    </div>
+    <div class="topbar-right">
+      <a href="admin.html" class="btn btn-ghost">Volver al panel</a>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <section class="card card-3d form-card">
+      <h2 id="planTitle" class="page-title">Nueva Planificación de Ruta</h2>
+
+      <form id="planForm" class="form">
+        <div class="form-group">
+          <label for="fecha">Fecha de la ruta</label>
+          <input type="date" id="fecha" class="input" required />
+        </div>
+
+        <div class="form-group">
+          <label for="camion">Seleccione un camión</label>
+          <select id="camion" class="input" required>
+            <option value="">Seleccione un camión</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="chofer">Seleccione un chofer</label>
+          <select id="chofer" class="input" required>
+            <option value="">Cargando...</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="colonias">Colonias asignadas</label>
+          <select id="colonias" class="input input-multi" multiple size="6">
+            <!-- Opciones por JS -->
+          </select>
+          <small class="hint">Puedes seleccionar varias con CTRL o SHIFT.</small>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">
+            Guardar
+          </button>
+          <button type="button" id="btnCancelarPlan" class="btn btn-ghost">
+            Cancelar
+          </button>
+        </div>
+
+        <div id="planMsg" class="alert alert-success" style="display:none;">
+          Ruta guardada en el demo (solo frontend).
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

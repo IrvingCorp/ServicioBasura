@@ -1,0 +1,53 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Rutas de la Semana</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="bg-gradient" data-page="rutas-semana">
+
+  <div class="bg-overlay"></div>
+
+  <header class="topbar">
+    <div class="topbar-left">
+      <span class="logo-badge">RB</span>
+      <span class="topbar-title">Rutas de la semana</span>
+    </div>
+    <div class="topbar-right">
+      <a href="admin.html" class="btn btn-ghost">Volver al panel</a>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <section class="card card-3d section-card">
+      <header class="section-header">
+        <h3>Planificación semanal (demo)</h3>
+      </header>
+
+      <div class="table-wrapper">
+        <table class="table">
+          <thead>
+          <tr>
+            <th>Día</th>
+            <th>Fecha</th>
+            <th>Camión</th>
+            <th>Chofer</th>
+            <th>Colonias</th>
+            <th>Estado</th>
+          </tr>
+          </thead>
+          <tbody id="tablaSemana">
+          <!-- Llenado por JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

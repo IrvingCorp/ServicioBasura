@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Panel Administrador – Recolección de Basura</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="bg-gradient" data-page="admin">
+
+  <div class="bg-overlay"></div>
+
+  <header class="topbar">
+    <div class="topbar-left">
+      <span class="logo-badge">RB</span>
+      <span class="topbar-title">Recolección de Basura – Admin</span>
+    </div>
+    <div class="topbar-right">
+      <span id="currentUserName" class="topbar-user"></span>
+      <button id="btnLogout" class="btn btn-ghost">Salir</button>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <h2 class="page-title">Panel de control</h2>
+
+    <!-- Tarjetas resumen -->
+    <section class="cards-grid">
+      <article class="card card-3d card-kpi kpi-green">
+        <p class="kpi-label">Camiones operativos</p>
+        <p id="cardCamiones" class="kpi-value">0</p>
+      </article>
+
+      <article class="card card-3d card-kpi kpi-blue">
+        <p class="kpi-label">Rutas de hoy</p>
+        <p id="cardRutas" class="kpi-value">0</p>
+      </article>
+
+      <article class="card card-3d card-kpi kpi-red">
+        <p class="kpi-label">Incidencias abiertas</p>
+        <p id="cardIncidencias" class="kpi-value">0</p>
+      </article>
+    </section>
+
+    <!-- Rutas del día -->
+    <section class="card card-3d section-card">
+      <header class="section-header">
+        <h3>Rutas del día</h3>
+        <div class="section-actions">
+          <button id="btnNuevaPlan" class="btn btn-outline">
+            Nueva planificación
+          </button>
+          <a href="rutas_semana.html" class="btn btn-outline-secondary">
+            Rutas de la semana
+          </a>
+        </div>
+      </header>
+
+      <div class="table-wrapper">
+        <table class="table">
+          <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Camión</th>
+            <th>Chofer</th>
+            <th>Colonias asignadas</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+          </thead>
+          <tbody id="tablaRutas">
+          <!-- Llenado por JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Incidencias (demo simple) -->
+    <section class="card card-3d section-card">
+      <header class="section-header">
+        <h3>Incidencias en tiempo real (demo)</h3>
+      </header>
+
+      <div class="table-wrapper">
+        <table class="table">
+          <thead>
+          <tr>
+            <th>Hora</th>
+            <th>Camión</th>
+            <th>Chofer</th>
+            <th>Tipo</th>
+            <th>Colonia</th>
+            <th>Detalle</th>
+          </tr>
+          </thead>
+          <tbody id="tablaIncidencias">
+          <!-- Llenado por JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
