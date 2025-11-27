@@ -3,26 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <title>Usuarios</title>
-    <link rel="stylesheet" href="../interfaz/css/styles.css">
+
+    <!-- ICONOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: "Segoe UI", sans-serif;
+            background: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 32px;
+            letter-spacing: .5px;
+        }
+
+        .table-container {
+            width: 90%;
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 15px rgba(0,0,0,0.08);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 15px;
+        }
+
+        thead {
+            background: #0d6efd;
+            color: white;
+        }
+
+        th, td {
+            padding: 14px 12px;
+            text-align: left;
+        }
+
+        tr:nth-child(even) {
+            background: #f2f5f7;
+        }
+
+        tr:hover {
+            background: #e8f0ff;
+        }
+
+        th {
+            font-weight: 600;
+        }
+
+        td {
+            color: #333;
+        }
+
+        /* Etiquetas para roles */
+        .rol {
+            font-weight: bold;
+            padding: 6px 10px;
+            border-radius: 6px;
+            color: white;
+            display: inline-block;
+            font-size: 13px;
+        }
+
+        .admin {
+            background: #6f42c1;
+        }
+
+        .chofer {
+            background: #0d6efd;
+        }
+
+        .ayudante {
+            background: #198754;
+        }
+
+        /* --- BOTONES --- */
+        .btn-edit, .btn-delete {
+            padding: 8px 12px;
+            border: none;
+            cursor: pointer;
+            border-radius: 6px;
+            font-size: 14px;
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: 0.2s ease;
+        }
+
+        .btn-edit {
+            background: #ffc107;
+        }
+
+        .btn-edit:hover {
+            background: #e0a800;
+        }
+
+        .btn-delete {
+            background: #dc3545;
+        }
+
+        .btn-delete:hover {
+            background: #b02a37;
+        }
+
+    </style>
 </head>
+
 <body>
 
-<h1>Usuarios</h1>
+    <h1>Lista de Usuarios</h1>
 
-<div id="tablaUsuarios"></div>
+    <div class="table-container">
+        <div id="tabla-usuarios"></div>
+    </div>
 
-<script src="../JS/main.js"></script>
-<script>
-document.addEventListener("DOMContentLoaded", async () => {
-    const data = await apiGet("usuarios");
-    renderTable("tablaUsuarios", data, [
-        { label: "ID", field: "id" },
-        { label: "Nombre", field: "nombre" },
-        { label: "Teléfono", field: "telefono" },
-        { label: "Rol", field: "rol" },
-    ]);
-});
-</script>
+    <script src="../JS/main.js"></script>
+
+    <script>
+        async function cargarUsuarios() {
+            const data = await apiGet("usuarios");
+
+            const usersStyled = data.map(u => ({
+                ...u,
+                rol: `<span class="rol ${u.rol}">${u.rol}</span>`,
+                acciones: `
+                    <button class="btn-edit"><i class="fa-solid fa-pen"></i> Editar</button>
+                    <button class="btn-delete"><i class="fa-solid fa-trash"></i> Eliminar</button>
+                `
+            }));
+
+            renderTable("tabla-usuarios", usersStyled, [
+                { field: "id", label: "ID" },
+                { field: "nombre", label: "Nombre" },
+                { field: "telefono", label: "Teléfono" },
+                { field: "rol", label: "Rol" },
+                { field: "acciones", label: "Acciones" }
+            ]);
+        }
+
+        cargarUsuarios();
+    </script>
 
 </body>
 </html>

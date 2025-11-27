@@ -1,52 +1,128 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <title>Panel de Control</title>
+    <!-- ICONOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <title>Panel de Control - Recolección de Basura</title>
+
+    <style>
+        body {
+            background: #f4f6f9;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            transition: .2s;
+        }
+        .module-btn {
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            border-radius: 12px;
+        }
+    </style>
 </head>
-<body class="bg-light">
+
+<body>
+
+    <!-- 🔵 BARRA SUPERIOR -->
+    <nav class="navbar navbar-dark bg-primary shadow">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">
+                <i class="fa-solid fa-truck"></i> Sistema de Recolección de Basura
+            </span>
+        </div>
+    </nav>
 
     <div class="container mt-4">
-      <h2 class="mb-4 fw-bold">Panel de Control</h2>
 
-      <div class="row g-3">
+        <!-- 🔥 TÍTULO PRINCIPAL -->
+        <h2 class="fw-bold text-center mb-4">
+            <i class="fa-solid fa-gauge-high"></i> Panel de Control
+        </h2>
 
-        <div class="col-md-4">
-          <div class="card text-white bg-primary shadow">
-            <div class="card-body">
-              <h5>Usuarios</h5>
-              <h2 id="usuariosTotal">0</h2>
+        <!-- 📊 TARJETAS DE ESTADÍSTICAS -->
+        <div class="row g-4 mb-4">
+
+            <div class="col-md-3">
+                <div class="card bg-primary text-white shadow card-hover">
+                    <div class="card-body">
+                        <h6><i class="fa-solid fa-users"></i> Usuarios</h6>
+                        <h2 id="usuariosTotal">0</h2>
+                    </div>
+                </div>
             </div>
-          </div>
+
+            <div class="col-md-3">
+                <div class="card bg-success text-white shadow card-hover">
+                    <div class="card-body">
+                        <h6><i class="fa-solid fa-route"></i> Rutas activas</h6>
+                        <h2 id="rutasActivas">0</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card bg-warning text-white shadow card-hover">
+                    <div class="card-body">
+                        <h6><i class="fa-solid fa-truck-monster"></i> Camiones</h6>
+                        <h2 id="totalCamiones">0</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card bg-danger text-white shadow card-hover">
+                    <div class="card-body">
+                        <h6><i class="fa-solid fa-triangle-exclamation"></i> Incidencias</h6>
+                        <h2 id="totalIncidencias">0</h2>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
-        <div class="col-md-4">
-          <div class="card text-white bg-success shadow">
-            <div class="card-body">
-              <h5>Rutas activas</h5>
-              <h2 id="rutasActivas">0</h2>
+        <!-- 🔽 MÓDULOS PRINCIPALES -->
+        <h4 class="fw-bold mb-3">Módulos del Sistema</h4>
+
+        <div class="row g-3">
+
+            <div class="col-md-3">
+                <button onclick="location.href='./pages/usuarios.html'" class="btn btn-primary module-btn shadow">
+                    <i class="fa-solid fa-users"></i> Usuarios
+                </button>
             </div>
-          </div>
+
+            <div class="col-md-3">
+                <button onclick="location.href='./pages/rutas.html'" class="btn btn-success module-btn shadow">
+                    <i class="fa-solid fa-route"></i> Rutas
+                </button>
+            </div>
+
+            <div class="col-md-3">
+                <button onclick="location.href='./pages/camiones.html'" class="btn btn-warning module-btn shadow">
+                    <i class="fa-solid fa-truck-monster"></i> Camiones
+                </button>
+            </div>
+
+            <div class="col-md-3">
+                <button onclick="location.href='./pages/incidencias.html'" class="btn btn-danger module-btn shadow">
+                    <i class="fa-solid fa-exclamation-circle"></i> Incidencias
+                </button>
+            </div>
+
         </div>
 
-        <div class="col-md-4">
-          <div class="card text-white bg-warning shadow">
-            <div class="card-body">
-              <h5>Incidencias</h5>
-              <h2 id="totalIncidencias">0</h2>
-            </div>
-          </div>
-        </div>
-
-      </div>
     </div>
 
     <!-- BOOTSTRAP JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

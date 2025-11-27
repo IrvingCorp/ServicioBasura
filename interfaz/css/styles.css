@@ -1,105 +1,187 @@
-/* ---------- ESTILOS GENERALES ---------- */
+/* -----------------------------------
+   ESTILOS GENERALES
+----------------------------------- */
 body {
     margin: 0;
     padding: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f0f2f5;
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    background: #eef1f5;
     color: #333;
 }
 
+/* Título principal */
 h1 {
     text-align: center;
     color: #222;
     margin-bottom: 25px;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
 }
 
-/* ---------- CONTENEDOR PRINCIPAL ---------- */
+/* -----------------------------------
+   CONTENEDOR PRINCIPAL
+----------------------------------- */
 .container {
     width: 90%;
+    max-width: 1100px;
     margin: auto;
     background: white;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+    animation: fadeIn 0.4s ease-in-out;
 }
 
-/* ---------- TABLAS ---------- */
+/* Animación entrada */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* -----------------------------------
+   TABLAS
+----------------------------------- */
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 15px;
     background: white;
-    border-radius: 10px;
+    border-radius: 12px;
     overflow: hidden;
 }
 
-th {
-    background: #0b6efd;
-    color: white;
-    padding: 12px;
-    font-weight: bold;
-    text-align: left;
+/* Encabezado */
+thead {
+    background: linear-gradient(45deg, #0b6efd, #0a58ca);
 }
 
+th {
+    color: white;
+    padding: 14px;
+    font-weight: 600;
+    text-align: left;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+/* Filas */
 td {
-    padding: 10px;
-    border-bottom: 1px solid #eee;
+    padding: 12px;
+    border-bottom: 1px solid #e3e6ea;
+    font-size: 15px;
+}
+
+/* Zebra alternado */
+tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+/* Hover */
+tr {
+    transition: all 0.15s ease;
 }
 
 tr:hover {
-    background: #eaf3ff;
+    background: #e7f1ff;
+    transform: scale(1.01);
 }
 
-/* Alternar colores */
-tr:nth-child(even) {
-    background: #fafafa;
-}
-
-/* ---------- BOTONES ---------- */
+/* -----------------------------------
+   BOTONES (GENERALES)
+----------------------------------- */
 button {
-    padding: 10px 15px;
+    padding: 9px 15px;
     border: none;
     cursor: pointer;
-    background: #0b6efd;
-    color: white;
     border-radius: 8px;
-    transition: 0.2s;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.2s ease-in-out;
+    color: white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
 }
 
 button:hover {
-    background: #084298;
+    transform: translateY(-3px);
 }
 
-/* ---------- FORMULARIOS ---------- */
+/* Botón primario */
+.btn-primary {
+    background: linear-gradient(45deg, #0b6efd, #0a58ca);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(45deg, #0a58ca, #084298);
+}
+
+/* Botón agregar */
+.btn-add {
+    background: #6610f2;
+    margin-bottom: 15px;
+}
+
+.btn-add:hover {
+    background: #520dc2;
+}
+
+/* Botón editar */
+.btn-edit {
+    background: #20c997;
+}
+
+.btn-edit:hover {
+    background: #159d79;
+}
+
+/* Botón eliminar */
+.btn-delete {
+    background: #dc3545;
+}
+
+.btn-delete:hover {
+    background: #a71d2a;
+}
+
+/* -----------------------------------
+   TARJETAS (CARDS)
+----------------------------------- */
+.card {
+    background: white;
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+    animation: fadeIn 0.4s;
+}
+
+/* -----------------------------------
+   FORMULARIOS
+----------------------------------- */
 input, select, textarea {
     width: 100%;
-    padding: 10px;
-    margin: 8px 0;
-    border-radius: 6px;
-    border: 1px solid #ccc;
+    padding: 12px;
+    margin-top: 6px;
+    border-radius: 8px;
+    border: 1px solid #cdd2d8;
+    font-size: 15px;
 }
 
 label {
-    font-weight: bold;
-    margin-top: 10px;
+    font-weight: 600;
+    margin-top: 12px;
     display: block;
 }
 
-/* ---------- TARJETAS ---------- */
-.card {
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-    margin-bottom: 20px;
-}
-
-/* ---------- ALERTAS ---------- */
+/* -----------------------------------
+   ALERTAS
+----------------------------------- */
 .alert {
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 15px;
+    padding: 14px;
+    border-radius: 10px;
+    margin-bottom: 18px;
     font-size: 15px;
+    font-weight: 600;
 }
 
 .alert-success {
@@ -117,20 +199,24 @@ label {
     color: #664d03;
 }
 
-/* ---------- LAYOUT SIMPLE ---------- */
+/* -----------------------------------
+   HEADER & FOOTER
+----------------------------------- */
 header {
     background: #0b6efd;
-    padding: 15px;
+    padding: 18px;
     color: white;
     text-align: center;
-    margin-bottom: 20px;
-    border-radius: 0 0 10px 10px;
+    margin-bottom: 25px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 0 0 12px 12px;
 }
 
 footer {
     text-align: center;
-    padding: 10px;
-    margin-top: 25px;
-    font-size: 14px;
+    margin-top: 35px;
+    padding: 12px;
     color: #666;
+    font-size: 14px;
 }

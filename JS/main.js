@@ -1,19 +1,9 @@
-// URL base del backend PHP
-const API_URL = "../admin";
+// URL base del backend FastAPI
+const API_URL = "http://localhost:8000";
 
-// GET genérico
+// GET genérico para FastAPI
 async function apiGet(endpoint) {
-    const res = await fetch(`${API_URL}/${endpoint}.php`);
-    return await res.json();
-}
-
-// POST genérico
-async function apiPost(endpoint, data) {
-    const res = await fetch(`${API_URL}/${endpoint}.php`, {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify(data)
-    });
+    const res = await fetch(`${API_URL}/${endpoint}`);
     return await res.json();
 }
 
