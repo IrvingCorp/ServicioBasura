@@ -245,7 +245,7 @@ function initAdminPage(data) {
     window.location.href = "planificacion.html";
   });
 
-  // Incidencias demo
+  // Incidencias
   const tbodyInc = document.getElementById("tablaIncidencias");
   tbodyInc.innerHTML = "";
   data.incidencias.forEach((i) => {

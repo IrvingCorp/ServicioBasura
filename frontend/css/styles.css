@@ -50,12 +50,13 @@ body {
 .bg-overlay {
   position: fixed;
   inset: 0;
-  background-image: url("https://images.pexels.com/photos/248079/pexels-photo-248079.jpeg?auto=compress&cs=tinysrgb&w=1200");
+  background-image: url("/img/Imagen de Municipio.jpg");
   background-size: cover;
   background-position: center;
   opacity: 0.18;
   filter: blur(3px);
   z-index: -1;
+  
 }
 
 /* Center wrapper for login */
@@ -287,6 +288,8 @@ label {
 }
 
 .page-title {
+  text-align: center;
+  color: white;
   margin-top: 0;
   margin-bottom: 1.2rem;
 }
