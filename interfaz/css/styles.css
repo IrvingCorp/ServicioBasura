@@ -1,0 +1,136 @@
+/* ---------- ESTILOS GENERALES ---------- */
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f0f2f5;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: #222;
+    margin-bottom: 25px;
+}
+
+/* ---------- CONTENEDOR PRINCIPAL ---------- */
+.container {
+    width: 90%;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+}
+
+/* ---------- TABLAS ---------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th {
+    background: #0b6efd;
+    color: white;
+    padding: 12px;
+    font-weight: bold;
+    text-align: left;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+tr:hover {
+    background: #eaf3ff;
+}
+
+/* Alternar colores */
+tr:nth-child(even) {
+    background: #fafafa;
+}
+
+/* ---------- BOTONES ---------- */
+button {
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    background: #0b6efd;
+    color: white;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #084298;
+}
+
+/* ---------- FORMULARIOS ---------- */
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+}
+
+/* ---------- TARJETAS ---------- */
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+/* ---------- ALERTAS ---------- */
+.alert {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+.alert-success {
+    background: #d1e7dd;
+    color: #0f5132;
+}
+
+.alert-danger {
+    background: #f8d7da;
+    color: #842029;
+}
+
+.alert-warning {
+    background: #fff3cd;
+    color: #664d03;
+}
+
+/* ---------- LAYOUT SIMPLE ---------- */
+header {
+    background: #0b6efd;
+    padding: 15px;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 0 0 10px 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    margin-top: 25px;
+    font-size: 14px;
+    color: #666;
+}
